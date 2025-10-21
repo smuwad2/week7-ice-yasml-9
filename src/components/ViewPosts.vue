@@ -28,7 +28,8 @@ export default {
         axios.get(`${this.baseUrl}/posts`)
             .then(response => {
                 // this gets the data, which is an array, and pass the data to Vue instance's posts property
-                this.posts = response.data
+                console.log("hello");
+                this.posts = response.data;
             })
             .catch(error => {
                 this.posts = [{ entry: 'There was an error: ' + error.message }]
