@@ -6,7 +6,7 @@
        // add code here
        data() {
         return {
-            moods: ["happy", "sad", "angry"],
+            moods: ["Happy", "Sad", "Angry"],
             setMood: '',
             subject: '',
             entry: '',
@@ -16,7 +16,6 @@
        computed: {
         baseUrl() {
             if (window.location.hostname === 'localhost') {
-                console.log("hello");
                 return "http://localhost:3000";
             } else {
                 const codespace_host = window.location.hostname.replace('5173', '3000')
