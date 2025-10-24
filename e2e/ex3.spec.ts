@@ -8,7 +8,8 @@ test('Ex3 add blog post test', async ({mount}) => {
     await component.locator('textarea').fill('This is the content of the new blog post.');
     await component.getByRole('combobox').selectOption('Angry');
     await component.getByRole('button', {name: 'Submit New Post'}).click();
-    
+
+    await expect(component.getByText('Post added successfully')).toBeVisible();
     const newResponse = await axios.get('http://localhost:3000/posts');
     const newPosts = newResponse.data;
     const addedPost = newPosts[0]
